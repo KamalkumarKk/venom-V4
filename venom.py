@@ -22,13 +22,13 @@ DEFAULT_THREADS = 200
 
 
 users = {}
-keys = {}
+keys = {Kamal}
 
 
 def load_data():
     global users, keys
     users = load_users()
-    keys = load_keys()
+    keys = load_keys(Kamal)
 
 def load_users():
     try:
@@ -163,7 +163,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.message.from_user.id)
 
     if user_id not in users or datetime.datetime.now() > datetime.datetime.strptime(users[user_id], '%Y-%m-%d %H:%M:%S'):
-        await update.message.reply_text("❌ Access expired or unauthorized. Please redeem a valid key.")
+        await update.message.reply_text("❌ Access not unauthorized. Please contact the owner @HackerboyYTK.")
         return
 
     if flooding_process is not None:
