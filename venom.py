@@ -22,13 +22,13 @@ DEFAULT_THREADS = 200
 
 
 users = {}
-keys = {Kamal}
+keys = {}
 
 
 def load_data():
     global users, keys
     users = load_users()
-    keys = load_keys(Kamal)
+    keys = load_keys()
 
 def load_users():
     try:
